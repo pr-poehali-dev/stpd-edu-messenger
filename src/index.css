@@ -1,38 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 40% 96%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 200 18% 46%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 85%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +99,332 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family:
+      "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+      Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .glossy-header {
+    background: linear-gradient(180deg, #2196f3 0%, #1976d2 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .glossy-logo {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glossy-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .glossy-tabs {
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .glossy-tab {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .glossy-tab[data-state="active"] {
+    background: linear-gradient(180deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    box-shadow:
+      0 4px 12px rgba(33, 150, 243, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glossy-item {
+    background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+  }
+
+  .glossy-item:hover {
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+  }
+
+  .glossy-grade {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glossy-button {
+    background: linear-gradient(180deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 4px 12px rgba(33, 150, 243, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .glossy-button:hover {
+    background: linear-gradient(180deg, #42a5f5 0%, #2196f3 100%);
+    box-shadow:
+      0 6px 16px rgba(33, 150, 243, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .glossy-button-small {
+    background: linear-gradient(180deg, #64b5f6 0%, #2196f3 100%);
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 2px 8px rgba(33, 150, 243, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .glossy-avatar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .glossy-avatar-small {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .glossy-avatar-large {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .glossy-badge {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    font-weight: bold;
+    box-shadow:
+      0 2px 6px rgba(255, 107, 107, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glossy-badge-active {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    font-weight: bold;
+    box-shadow:
+      0 2px 6px rgba(255, 152, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glossy-badge-upcoming {
+    background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+    color: white;
+    font-weight: bold;
+    box-shadow:
+      0 2px 6px rgba(100, 181, 246, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glossy-chat-item {
+    background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+  }
+
+  .glossy-chat-item:hover {
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+    box-shadow:
+      0 4px 12px rgba(33, 150, 243, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateX(2px);
+  }
+
+  .glossy-chat-header {
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .glossy-message-received {
+    background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .glossy-message-sent {
+    background: linear-gradient(180deg, #2196f3 0%, #1976d2 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow:
+      0 2px 8px rgba(33, 150, 243, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .glossy-input-wrapper {
+    position: relative;
+  }
+
+  .glossy-input {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid rgba(33, 150, 243, 0.3);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding-right: 56px;
+  }
+
+  .glossy-input:focus {
+    border-color: #2196f3;
+    box-shadow:
+      0 4px 12px rgba(33, 150, 243, 0.2),
+      inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .glossy-send-button {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 2px 8px rgba(33, 150, 243, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .glossy-send-button:hover {
+    background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+    box-shadow:
+      0 4px 12px rgba(33, 150, 243, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .glossy-lesson-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+  }
+
+  .glossy-lesson-card:hover {
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+  }
+
+  .glossy-info-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+  }
+
+  .glossy-info-card:hover {
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: scale(1.02);
+  }
+
+  .glossy-setting-item {
+    background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+  }
+
+  .glossy-setting-item:hover {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .glossy-icon-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
