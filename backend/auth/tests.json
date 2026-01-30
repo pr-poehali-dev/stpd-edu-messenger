@@ -1,0 +1,51 @@
+{
+  "tests": [
+    {
+      "name": "Register new user",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "register",
+        "username": "testuser123",
+        "password": "testpass",
+        "role": "student",
+        "class_number": 10,
+        "class_letter": "A"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "user": {
+          "username": "string",
+          "role": "string"
+        }
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login user",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "login",
+        "username": "testuser123",
+        "password": "testpass"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Search users",
+      "method": "GET",
+      "path": "/?action=search&q=test",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "users": []
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

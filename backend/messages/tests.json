@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Send message",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "sender_id": 1,
+        "receiver_id": 2,
+        "message": "Привет!"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get messages",
+      "method": "GET",
+      "path": "/?user_id=1&other_user_id=2",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "messages": []
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
